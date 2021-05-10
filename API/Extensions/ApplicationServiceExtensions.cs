@@ -12,6 +12,8 @@ namespace API.Extensions
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {   //zakres dzialania tokenu
             services.AddScoped<ITokenService, TokenService>();
+            //dodanie serwisu dla repozytorium
+            services.AddScoped<IUserRepository, UserRepository>();
             //dodanie konfiguracji bazy danych
             services.AddDbContext<DataContext>(options =>
             {
