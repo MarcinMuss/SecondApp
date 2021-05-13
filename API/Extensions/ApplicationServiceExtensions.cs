@@ -1,4 +1,5 @@
 using API.Data;
+using API.Helpers;
 using API.Interfaces;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,8 @@ namespace API.Extensions
             services.AddScoped<ITokenService, TokenService>();
             //dodanie serwisu dla repozytorium
             services.AddScoped<IUserRepository, UserRepository>();
+            //dodanie automappera i okreslenie z ktorego profilu ma korzystac
+            services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             //dodanie konfiguracji bazy danych
             services.AddDbContext<DataContext>(options =>
             {
