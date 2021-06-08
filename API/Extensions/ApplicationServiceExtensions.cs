@@ -11,7 +11,9 @@ namespace API.Extensions
     public static class ApplicationServiceExtensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
-        {   //zakres dzialania tokenu
+        {   
+            services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
+            //zakres dzialania tokenu
             services.AddScoped<ITokenService, TokenService>();
             //dodanie serwisu dla repozytorium
             services.AddScoped<IUserRepository, UserRepository>();
