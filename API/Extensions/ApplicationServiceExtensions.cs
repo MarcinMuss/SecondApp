@@ -15,6 +15,8 @@ namespace API.Extensions
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
             //zakres dzialania tokenu
             services.AddScoped<ITokenService, TokenService>();
+            //dodanie serwisu dla dodawania i usuwania zdjec
+            services.AddScoped<IPhotoService, PhotoService>();
             //dodanie serwisu dla repozytorium
             services.AddScoped<IUserRepository, UserRepository>();
             //dodanie automappera i okreslenie z ktorego profilu ma korzystac
