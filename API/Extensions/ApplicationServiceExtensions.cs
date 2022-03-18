@@ -17,6 +17,8 @@ namespace API.Extensions
             services.AddScoped<ITokenService, TokenService>();
             //dodanie serwisu dla dodawania i usuwania zdjec
             services.AddScoped<IPhotoService, PhotoService>();
+            //dodanie serwisu dla polubień
+            services.AddScoped<ILikesRepository, LikesRepository>();
             //dodanie serwisu dla "kiedy ostatnio uzytkownik byl aktywny"
             services.AddScoped<LogUserActivity>();
             //dodanie serwisu dla repozytorium
