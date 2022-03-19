@@ -19,9 +19,11 @@ namespace API.Extensions
             services.AddScoped<IPhotoService, PhotoService>();
             //dodanie serwisu dla polubień
             services.AddScoped<ILikesRepository, LikesRepository>();
+            //dodanie serwisu dla wiadomosci
+            services.AddScoped<IMessageRepository, MessageRepository>();
             //dodanie serwisu dla "kiedy ostatnio uzytkownik byl aktywny"
             services.AddScoped<LogUserActivity>();
-            //dodanie serwisu dla repozytorium
+            //dodanie serwisu dla uzytkownika
             services.AddScoped<IUserRepository, UserRepository>();
             //dodanie automappera i okreslenie z ktorego profilu ma korzystac
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
