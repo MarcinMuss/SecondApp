@@ -1,7 +1,7 @@
 <!-- ngIf poniewaz musimy sprawdzic czy mamy czlonka zanim zaladujemy szablon, jesli nie sprawdzimy, 
 szablon zaladuje sie zanim czlonek w ogole pojawi sie w member-detail.component gdzie jest ladowany
 i wtedy w kosoli wyskakuje blad ze czlonek jest niezdefiniowany mimo, ze pojawi sie w przegladarce normalnie -->
-<div class="row" *ngIf="member">
+<div class="row"><!--*ngIf="member">-->
     <div class="col-4">
         <div class="card">
             <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.knownAs}}"
@@ -27,7 +27,7 @@ i wtedy w kosoli wyskakuje blad ze czlonek jest niezdefiniowany mimo, ze pojawi 
             <div class="card-footer">
                 <div class="btn-group d-flex">
                     <button class="btn btn-primary">Like</button>
-                    <button class="btn btn-success">Message</button>
+                    <button (click)="selectTab(3)" class="btn btn-success">Message</button>
                 </div>
             </div>
         </div>
